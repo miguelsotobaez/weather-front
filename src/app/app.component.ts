@@ -61,10 +61,29 @@ export class AppComponent implements OnInit {
         },
         err => {
           alert(err.message);
+          this.sendError(err.message);
           this.ngOnInit();
         }
       );
     this.getWeather(this.location.lat, this.location.lon);
+  }
+
+  sendError(message){
+    let myDate = new Date();
+    let data = {
+      message: message,
+      date: myDate
+    }
+    this.weatherService
+      .setError(data)
+      .subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   getWeather(lat: number, lon: number) {
@@ -110,6 +129,7 @@ export class AppComponent implements OnInit {
             },
             err => {
               alert(err.message);
+              this.sendError(err.message);
               this.ngOnInit();
             }
         );

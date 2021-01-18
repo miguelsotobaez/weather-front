@@ -1,14 +1,10 @@
 <div class="card cardBanner" style="width: 100%;">
-      <form (submit)="submitCity(city)">
         <div class="card-body cardBannerS" style="width: 100%; height: 45%;">
           <div *ngIf="weather" class="infoCity">
             <h1>{{weather.name}}</h1>
             <h2>{{weather.sys.country}}</h2>
             <h3>{{weather.dt * 1000| date:'yyyy/MM/dd, h:mm'}}</h3>
           </div>
-
-          
-          <!-- <app-select></app-select> -->
 
           <form>
             <p>Opciones</p>
@@ -23,7 +19,6 @@
             <button (click)="getLatLon(selectedValue)" class="btn btn-info">Consultar</button>
           </form>
       </div>
-      </form>
   </div>
 
 

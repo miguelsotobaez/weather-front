@@ -32,6 +32,10 @@ export class WeatherService {
     return this.http.post(`${this.API_URL}/weathers`,body);
    }
 
+   setError(body){
+    return this.http.post(`${this.API_URL}/errors`,body);
+   }
+
    getWeatherSelect(selectedValue: string){
     console.log(selectedValue);
     return this.http.get(`${this.URL}${selectedValue}`)
