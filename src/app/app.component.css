@@ -1,0 +1,132 @@
+.cardBanner{
+  height: 50%;
+  padding:30px;
+  -webkit-box-shadow: 0px 14px 15px -6px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 14px 15px -6px rgba(0, 0, 0, 0.249);
+  box-shadow: 0px 14px 15px -6px rgba(0, 0, 0, 0.269);
+}
+
+.cardBannerS{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.formCity{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+input:focus, input.form-control:focus {
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+button{
+  width: 45%;
+}
+
+button:focus {
+  outline: none;
+}
+
+h1{
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 60px;
+  color: #159AB4;
+}
+
+h2{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+h3{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  color: #159AB4;
+}
+
+p{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 20px;
+}
+
+
+.cardInfo{
+  margin-top:50px;
+  display: flex;
+  justify-content: center;
+}
+
+.cardTemp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.cardTempEx{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+}
+
+.cardTempInfo{
+  margin: 30px;
+}
+
+.windS, .humidityS, .rainS{
+  display: flex;
+}
+
+.wind, .humidity, .rain{
+  width: 50px;
+  margin-left: 25px;
+}
+
+.wind img{
+  width: 20px;
+}
+
+.humidity img{
+  width: 30px;
+}
+
+.rain img{
+  width: 30px;
+}
+
+@media (max-width: 900px){
+  .cardTempInfo{
+    margin: 5px;
+  }
+
+  .cardBannerS{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardInfo{
+    flex-direction: column;
+    align-items: center;
+  }
+}

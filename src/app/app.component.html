@@ -1,0 +1,75 @@
+<div class="card cardBanner" style="width: 100%;">
+      <form (submit)="submitCity(city)">
+        <div class="card-body cardBannerS" style="width: 100%; height: 45%;">
+          <div *ngIf="weather" class="infoCity">
+            <h1>{{weather.name}}</h1>
+            <h2>{{weather.sys.country}}</h2>
+            <h3>{{weather.dt * 1000| date:'yyyy/MM/dd, h:mm'}}</h3>
+          </div>
+
+          
+          <!-- <app-select></app-select> -->
+
+          <form>
+            <p>Opciones</p>
+            <mat-form-field appearance="fill">
+              <mat-label>Seleccione una ciudad</mat-label>
+              <mat-select [(ngModel)]="selectedValue" name="city" #cityName>
+                <mat-option *ngFor="let city of redisCities" [value]="city.city" #name>
+                  {{city.city}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button (click)="getLatLon(selectedValue)" class="btn btn-info">Consultar</button>
+          </form>
+      </div>
+      </form>
+  </div>
+
+
+
+  <div class="row cardInfo">
+    <div class="col-sm-5 cardTempInfo">
+      <div class="card">
+        <div class="card-body cardTemp" *ngIf="weather">
+          <h3>Clima: {{weather.weather[0].description}}</h3>
+          <h2>{{weather.main.temp | number: '1.0-0'}}°C</h2>
+          <p>Temperatura</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5 cardTempInfo">
+      <div class="card">
+        <div class="card-body cardTempEx" *ngIf="weather">
+          <div class="windS">
+            <div class="wind">
+              <img src="../assets/humedad.png" alt="">
+            </div>
+            <h3>Humedad: {{weather.main.humidity}}%</h3>
+          </div>
+
+          <div class="humidityS">
+            <div class="humidity">
+              <img src="../assets/viento.png" alt="">
+            </div>
+            <h3>Viento: {{weather.wind.speed}}km/h</h3>
+          </div>
+
+          <div class="rainS">
+            <div class="rain">
+              <img src="../assets/lluvia.png" alt="">
+            </div>
+            <h3>Prop. precipitaciones: {{weather.clouds.all}}%</h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
